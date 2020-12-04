@@ -1,6 +1,3 @@
-# find the two entries that sum to 2020 and then multiply those two numbers together.
-# For example, 1721 and 299 sums 2020
-
 def operateNumbers(numbers):
 
     length = len(numbers)
