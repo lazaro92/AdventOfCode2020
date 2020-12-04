@@ -23,7 +23,15 @@ def read_file():
     rd.close()
     return text
 
-required_fields = { 'byr': False, 'iyr':False, 'eyr':False, 'hgt':False, 'hcl':False, 'ecl':False, 'pid':False }
+required_fields = {
+        'byr': False,
+        'iyr':False,
+        'eyr':False,
+        'hgt':False,
+        'hcl':False,
+        'ecl':False,
+        'pid':False
+        }
 
 text = read_file()
 result = process_data(text, required_fields)

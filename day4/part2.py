@@ -43,7 +43,8 @@ conditions = {
         (x[-2:] == 'in' and 59 <= int(x[:-2]) and int(x[:-2]) <= 76),
         
         'hcl': lambda x: len(x) == 7 and x[0] == '#' and
-        all(map(lambda y: y in list('abcdef0123456789'), list(x)[1:])),
+        all(map(lambda y: (48 <= ord(y) and ord(y) <= 57) or
+            (97 <= ord(y) and ord(y) <= 102), list(x)[1:])),
 
         'ecl': lambda x: x in ['amb', 'blu', 'brn', 'gry', 'grn', 'hzl', 'oth'],
         'pid': lambda x: len(x) == 9 and x.isdigit()
