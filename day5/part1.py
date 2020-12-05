@@ -2,7 +2,7 @@ import math
 
 def find(data, min_val, max_val, char_range):
     if len(data) != 0:
-        half = math.ceil((max_val - min_val) / 2.0) + min_val
+        half = math.ceil((max_val + min_val) / 2.0)
 
         if data[0] == char_range[0]:
             return find(data[1:], min_val, half, char_range)
