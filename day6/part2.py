@@ -11,13 +11,10 @@ def get_yes_answers_by_group(text):
     
     for line in text.split('\n')[:-1]:
         if len(line) == 0:
-            count = 0
-            for val in answers.values():
-                if val == persons:
-                    count += 1
+            count = len(filter(lambda x: x == persons, answers.values()))
             group_count.append(count)
-            persons = 0
             answers = {}
+            persons = 0
 
         else:
             for char in line:
@@ -27,16 +24,10 @@ def get_yes_answers_by_group(text):
                     answers[char] += 1
             persons += 1
 
-    count = 0
-    for val in answers.values():
-        if val == persons:
-            count += 1
+    count = len(filter(lambda x: x == persons, answers.values()))
     group_count.append(count)
 
     return group_count
-
-
-
 
 text = read_file()
 results = get_yes_answers_by_group(text)
