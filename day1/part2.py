@@ -1,12 +1,12 @@
 def operateNumbers(numbers):
+    results = []
     length = len(numbers)
     for x in range(length):
-        for y in range(length):
-            for z in range(length):
+        for y in range(x, length):
+            for z in range(y, length):
                 if (numbers[x] + numbers[y] + numbers[z])  == SUM_RESULT:
-                    return [numbers[x], numbers[y], numbers[z]]
-            
-
+                    results.append([numbers[x], numbers[y], numbers[z]])
+    return results
 
 def readFile():
     numbers = []
@@ -20,13 +20,14 @@ def readFile():
 
     return numbers
 
-def printResults(result):
-    if len(result) == 0:
+def printResults(results):
+    if len(results) == 0:
         print('No results')
     else:
-        print(str(result[0]) +  " * " +  str(result[1]) + " * " + str(result[2]) + " = " + str(result[0] * result[1] * result[2]))
+        for result in results:
+            print result[0] * result[1] * result[2]
 
 SUM_RESULT = 2020
 numbers = readFile()
-result = operateNumbers(numbers)
-printResults(result)
+results = operateNumbers(numbers)
+printResults(results)
