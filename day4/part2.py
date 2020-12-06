@@ -14,9 +14,6 @@ def process_data(data, req_fields):
                     req_fields[key] = True
     return valid_passports
 
-
-
-
 def read_file():
     rd = open('input.txt', 'r')
     text = rd.read()
