@@ -30,7 +30,7 @@ def process_data(all_rules, current_bag, find_bag):
     return found
 
 text = read_file()
-rules = reformat(text)
+rules = create_dict(text)
 
 count = 0
 for bag in rules.keys():
