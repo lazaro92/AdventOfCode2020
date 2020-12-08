@@ -18,7 +18,6 @@ def execute_program(instructions):
         if current[0] == 'acc':
             acc += int(current[1])
             x += 1
-        
         elif current[0] == 'jmp':
             x += int(current[1])
         elif current[0] == 'nop':

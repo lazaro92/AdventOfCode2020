@@ -16,11 +16,13 @@ def execute_program(instructions):
         if current[0] == 'acc':
             acc += int(current[1])
             x += 1
-        
         elif current[0] == 'jmp':
             x += int(current[1])
-        else:
+        elif current[0] == 'nop':
             x += 1
+        else:
+            print('instruction not found')
+            return -1
     return acc
 
 program = read_file()
