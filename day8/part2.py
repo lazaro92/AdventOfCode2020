@@ -30,25 +30,25 @@ def execute_program(instructions):
 def find_correct_acc(program):
     for x in range(len(program)):
         swap = False
-        instruction = program[x].split(' ')
-        if instruction[0] == 'jmp':
-            program[x] = 'nop ' + instruction[1]
-            swap = True
-        elif instruction[0] == 'nop':
-            program[x] = 'jmp ' + instruction[1]
-            swap = True
-       
+        swap = swap_instruction(program, x)
+
         accumulator = execute_program(program)
         if accumulator != -1:
             return accumulator
 
         if swap == True:
-            instruction = program[x].split(' ')
-            if instruction[0] == 'jmp':
-                program[x] = 'nop ' + instruction[1]
-            elif instruction[0] == 'nop':
-                program[x] = 'jmp ' + instruction[1]
+            swap = swap_instruction(program, x)
 
+def swap_instruction(program, line):
+    swap = False
+    instruction = program[line].split(' ')
+    if instruction[0] == 'jmp':
+        program[line] = 'nop ' + instruction[1]
+        swap = True
+    elif instruction[0] == 'nop':
+        program[line] = 'jmp ' + instruction[1]
+        swap = True
+    return swap
 
 program = read_file()
 real_accumulator = find_correct_acc(program)
