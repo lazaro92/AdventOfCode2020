@@ -20,21 +20,16 @@ def create_dict(text):
             colors[key_color].append(temp)
     return colors
 
-def process_data(all_rules, current_bag, find_bag):
-    found = False
-    for rule in all_rules[current_bag]:
-        if find_bag in rule[1]:
-            return True
-        else: 
-            found = process_data(all_rules, rule[1], find_bag)
-    return found
+def process_rules(dict_rules, bag_to_find='shiny gold'):
+    possible_bags = set()
+    for rules in dict_rules.items():
+        for rule in rules[1]:
+            if rule[1] == bag_to_find:
+                possible_bags.add(rules[0])
+                possible_bags.update(process_rules(dict_rules, rules[0]))
+    return possible_bags
 
 text = read_file()
-rules = create_dict(text)
-
-count = 0
-for bag in rules.keys():
-    result = process_data(rules, bag, 'shiny gold')
-    if result: count += 1
-
-print(count)
+dict_rules = create_dict(text)
+result = process_rules(dict_rules)
+print(len(result))
