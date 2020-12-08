@@ -1,5 +1,3 @@
-from functools import reduce
-
 def count_trees(data, col, row, count):
     col_max = len(data[0])
     row_max = len(data)
@@ -14,11 +12,8 @@ def count_trees(data, col, row, count):
 def read_file():
     rd = open('input.txt', 'r')
     text = rd.read()
-        
     rd.close()
     return text.split('\n')[:-1]
-
-
 
 slopes_movement = [[1,1], [3,1], [5,1], [7,1], [1,2]]
 counts = []
@@ -32,4 +27,4 @@ for i in range(len(slopes_movement)):
     result = count_trees(data, 0, 0, 0)
     counts.append(result)
 
-print 'Result: ', reduce((lambda x, y: x * y), counts) 
+print('Result: ', reduce((lambda x, y: x * y), counts))

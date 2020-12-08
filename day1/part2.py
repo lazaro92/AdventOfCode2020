@@ -25,7 +25,7 @@ def printResults(results):
         print('No results')
     else:
         for result in results:
-            print result[0] * result[1] * result[2]
+            print(result[0] * result[1] * result[2])
 
 SUM_RESULT = 2020
 numbers = readFile()

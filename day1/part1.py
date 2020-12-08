@@ -1,5 +1,4 @@
 def operateNumbers(numbers):
-
     length = len(numbers)
     pairs = []
     for x in range(length):
@@ -7,7 +6,6 @@ def operateNumbers(numbers):
             if numbers[x] + numbers[y] == SUM_RESULT:
                 pairs.append((numbers[x], numbers[y]))
     return pairs
-
 
 def readFile():
     numbers = []

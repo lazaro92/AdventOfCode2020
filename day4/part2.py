@@ -1,6 +1,5 @@
 def process_data(data, req_fields):
     valid_passports = 0
-
     for line in data.split('\n'):
         if line == '':
             if all(req_fields.values()):
@@ -17,7 +16,6 @@ def process_data(data, req_fields):
 def read_file():
     rd = open('input.txt', 'r')
     text = rd.read()
-        
     rd.close()
     return text
 
@@ -49,4 +47,4 @@ conditions = {
 
 text = read_file()
 result = process_data(text, required_fields)
-print result
+print(result)

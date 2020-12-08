@@ -16,7 +16,6 @@ def read_file():
     rd.close()
     return text.split('\n')[:-1]
 
-
 data = read_file()
 result = count_trees(data, 0, 0, 0)
 print('Number of trees: ', result)

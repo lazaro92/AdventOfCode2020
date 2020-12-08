@@ -7,7 +7,6 @@ def read_file():
 def execute_program(instructions):
     acc = 0
     executed_lines = []
-
     x = 0
     while x not in executed_lines:
         executed_lines.append(x)
@@ -27,6 +26,5 @@ def execute_program(instructions):
 
 program = read_file()
 accumulator = execute_program(program)
-
 print(accumulator)
 

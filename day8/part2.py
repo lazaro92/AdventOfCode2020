@@ -7,7 +7,6 @@ def read_file():
 def execute_program(instructions):
     acc = 0
     executed_lines = []
-
     x = 0
     while x < len(instructions):
         if x in executed_lines:

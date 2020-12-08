@@ -29,5 +29,4 @@ def process_rules(dict_rules, bag_to_find='shiny gold'):
 text = read_file()
 dict_rules = create_dict(text)
 result = process_rules(dict_rules)
-
 print(result-1)

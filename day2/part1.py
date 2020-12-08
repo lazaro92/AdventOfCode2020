@@ -14,23 +14,17 @@ def read_file():
     rd = open('input.txt', 'r')
     while True:
         line = rd.readline()
-        
         if not line:
             break;
         data.append(extract_line_info(line))
-
     rd.close()
-
     return data
 
 def extract_line_info(line):
     splited = line.split(' ')
     range_char = splited[0].split('-')
-    
     return int(range_char[0]), int(range_char[1]), splited[1][0], splited[2]
-
 
 data = read_file()
 results = process_data(data)
-
 print ('number of valid passwords: ', results)
