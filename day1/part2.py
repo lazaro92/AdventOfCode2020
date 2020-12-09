@@ -2,8 +2,8 @@ def operateNumbers(numbers):
     results = []
     length = len(numbers)
     for x in range(length):
-        for y in range(x, length):
-            for z in range(y, length):
+        for y in range(x+1, length):
+            for z in range(y+1, length):
                 if (numbers[x] + numbers[y] + numbers[z])  == SUM_RESULT:
                     results.append([numbers[x], numbers[y], numbers[z]])
     return results
