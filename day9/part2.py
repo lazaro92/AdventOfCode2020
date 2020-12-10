@@ -14,12 +14,14 @@ def find_set_that_sum_result(numbers, result):
                 minim = numbers[y]
             elif numbers[y] > maxim:
                 maxim = numbers[y] 
+
             if acc == result:
                 return minim + maxim
+            elif acc > result:
+                break
     return -1
 
 result = 26134589
 numbers = read_file()
 result = find_set_that_sum_result(numbers, result)
 print(result)
-
