@@ -12,7 +12,6 @@ def read_file():
     return numbers
 
 def process_jolts(jolts):
-    x = 0
     diff1 = 0
     diff3 = 0
     for x in range(len(jolts)):
