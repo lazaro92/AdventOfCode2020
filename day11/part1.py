@@ -35,21 +35,23 @@ def process(matrix):
                 return -1
     return new_matrix, has_changed
 
-def printMatrix(matrix):
+def print_matrix(matrix):
     for x in range(len(matrix)):
         for y in range(len(matrix)):
             print(matrix[x][y], end='')
         print('\n', end='')
+
+def count_occupied_seats(matrix):
+    occupied_seats = 0
+    for row in matrix:
+        for char in row:
+            if char == '#':
+                occupied_seats += 1
+    return occupied_seats
 
 matrix = read_file()
 while True:
     matrix, changed = process(matrix)
     if not changed: break
 
-occupied_seats = 0
-for row in matrix:
-    for char in row:
-        if char == '#':
-            occupied_seats += 1
-
-print(occupied_seats)
+print(count_occupied_seats(matrix))
