@@ -24,5 +24,3 @@ def get_manhattan_distace(instructions):
 instructions = read_file()
 distance = get_manhattan_distace(instructions)
 print(distance)
-
-#991
