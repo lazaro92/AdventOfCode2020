@@ -55,8 +55,8 @@ def evaluate(expression):
 
     return current
 
-ans = 0
+result = 0
 for expression in read_file():
     expression = expression.replace(' ', '')
-    ans += evaluate(expression)
-print(ans)
+    result += evaluate(expression)
+print(result)
